@@ -31,7 +31,7 @@ def send_create(sender, instance, created, **kwargs):
             recievers.append(user.email)
 
         message = f"Description: \n {instance.description}"
-        subject = f"The new book of {instance.title} is alreay in the store"
+        subject = f"The new book of {instance.title} is already in the store"
         send_mail(subject, message, 'email@gmail.com', recievers)
 
 post_save.connect(send_create, sender=NewBook)
